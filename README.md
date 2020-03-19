@@ -24,12 +24,14 @@ You need these things to install and run the program:
 
 Start up Postman. These are the Endpoints used. 
 
-request-body name example:
+#### request-body structure:
+
+name:
 {
 "name": "john"
 }
 
-request-body name and move example:
+name and move:
 {
 "name": "john",
 "move": "rock"
@@ -37,17 +39,20 @@ request-body name and move example:
 
 viable moves(not case-sensitive): rock, paper, scissors OR r, p, s
 
-
- POST /api/games
-    * requires a player name in request-body
-    Example
-    
-    
- POST /api/games/{id}/join
- POST /api/games/{id}/move
+#### Endpoints
+ POST /api/games (requires first players name)
+ * Gives the id to use in the other endpoints
+ 
+ POST /api/games/{id}/join (requires second players name)
+ 
+ POST /api/games/{id}/move (requires name and move)
+ 
  GET /api/games/{id}
 
-Some 
+Some restrictions set: 
+
+* There must be two players in a game before anyone can make a move.
+* Once a player has chosen a move, they can not change it.
 
 ## Author
 
