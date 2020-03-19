@@ -1,5 +1,5 @@
 /**
- * @author Niclas Fölster nfolster@kth.se
+ * @author Niclas Fölster
  * @version 0.2
  * @since 2020-03-19
  */

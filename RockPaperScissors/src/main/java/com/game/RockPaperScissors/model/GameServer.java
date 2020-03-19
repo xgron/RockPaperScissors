@@ -1,8 +1,11 @@
+/**
+ * @author Niclas Fölster
+ * @version 0.2
+ * @since 2020-03-19
+ */
 package com.game.RockPaperScissors.model;
 
-
 import com.game.RockPaperScissors.model.Exceptions.gameDoesNotExistException;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
