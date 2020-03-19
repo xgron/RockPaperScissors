@@ -1,17 +1,24 @@
+/**
+ * @author Niclas Fölster nfolster@kth.se
+ * @version 0.2
+ * @since 2020-03-19
+ */
 package com.game.RockPaperScissors.model;
 
-
+import com.game.RockPaperScissors.model.Exceptions.samePlayernameException;
 import java.util.UUID;
 
+/**
+ * Representation of a game
+ * The id uses UUID, which makes sure that no games will have same ID, or at least the chance is astronomically small.
+ */
 public class Game {
-
 
     private UUID id;
 
     private Player player1;
     private Player player2;
     private Status status;
-    private Player winner;
 
     public Game(Player player1) {
         this.player1 = player1;
@@ -23,10 +30,6 @@ public class Game {
 
     public UUID getId() {
         return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public Player getPlayer1() {
@@ -41,7 +44,12 @@ public class Game {
         return player2;
     }
 
+    //Throws exception if both players have the same name.
     public void setPlayer2(Player player2) {
+        //Player1 does not need to check for samePlayernameException, since they are always the creator of the game
+        if(player2.getName().equals(player1.getName()))
+            throw new samePlayernameException();
+
         this.player2 = player2;
     }
 
@@ -53,23 +61,5 @@ public class Game {
         this.status = status;
     }
 
-    public Player getWinner() {
-        return winner;
-    }
-
-    public void setWinner(Player winner) {
-        this.winner = winner;
-    }
-
-    public boolean winsOver(String move, String move2){
-        if (move.equals("Rock"))
-            return ("Scissors".equals(move2));
-        if (move.equals("Paper"))
-            return ("Rock".equals(move2));
-        if (move.equals("Scissors"))
-            return ("Paper".equals(move2));
-        else
-            return false;
-    }
 }
 
