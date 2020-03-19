@@ -5,7 +5,7 @@ of the game Rock, paper, scissors. It is created using Java, Spring Boot and Mav
 
 
 
-### Prerequisites
+## Prerequisites
 
 You need these things to install and run the program:
 
@@ -14,19 +14,19 @@ You need these things to install and run the program:
 - Postman - https://www.postman.com/downloads/ NOTE: There are other programs you can use instead of Postman.
 
 
-### Setting up
+## Setting up
 
 1. Unzip the folder.
 2. Run the command "mvn clean install spring-boot:run" from the RockPaperScissors folder.
 3. Wait for the program to load.
 
-### Playing
+## Playing
 
 Start up Postman. the port is the default for Spring Boot, which is 8080
 
 To edit request-body, chose raw and select JSON. These are the Endpoints used. 
 
-#### request-body structure:
+### request-body structure:
 
 name:
 {
@@ -41,7 +41,7 @@ name and move:
 
 viable moves(not case-sensitive): rock, paper, scissors OR r, p, s
 
-#### Endpoints
+### Endpoints
  * POST /api/games (requires first players name)
     * Gives the id to use in the other endpoints
  
@@ -51,12 +51,12 @@ viable moves(not case-sensitive): rock, paper, scissors OR r, p, s
  
  * GET /api/games/{id}
 
-#### Some restrictions set: 
+### Some restrictions set: 
 
 * There must be two players in a game before anyone can make a move.
 * Once a player has chosen a move, they can not change it.
 
-### Example game:
+## Example game:
 localhost:8080/api/games (POST)
 * Body: { "name":"john" }
 
